@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MicroFinder</title>
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='css/bootstrap.min.css' )}}" rel='stylesheet'>
+    <link href="{{url_for('static', filename='logo.ico' )}}" rel='shortcut icon'>
+</head>
+
+<header>
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">
+		<img style="width: 200px" src="{{url_for('static', filename='images/no bg.jpg')}}"/>
+        </a>
+    </div>
+    <div class="search">
+        <form class="navbar-form" role="search" action="" >
+            <div class="input-group add-on" style="margin-top: 40px">
+              <input class="form-control" value="{{ search_key }}" style="width: 500px;" placeholder="Search Here" name="search" id="search" type="text">
+              <div class="input-group-btn">
+                <button class="btn btn-success" type="submit">Search</button>
+              </div>
+            </div>
+        </form>
+	</div>
+    <nav class="navbar navbar-inverse" style="margin-top: 60px; height: 20px">
+         <div  class="btn-group">
+             <p>
+                 <a href="/jumia"><button style="margin-left: 15px;" type="button" class="btn btn-warning btn-lg">Jumia</button></a>
+                 <a href="/"><button style="margin-left: 15px;" type="button" class="btn btn-primary btn-lg">Konga</button></a>
+                 <a href="/"><button style="margin-left: 15px;" type="button" class="btn btn-danger btn-lg">PayPorte</button></a>
+             </p>
+        </div>
+    </nav>
+    <nav class="navbar navbar-default navbar-right">
+        <!--<p>Item Description</p>-->
+        <!--<img style="margin-right: 100px; width: 300px;" src="{{url_for('static', filename='images/code.jpg')}}">-->
+    </nav>
+</header>
+
+<body>
+<div class="border-row" style="width: 100%; margin-bottom: 15px"></div>
+<div class="container-fluid" style="min-height: 100%;">
+
+{% block body%}
+{% endblock %}
+
+</div>
+</body>
+
+    <footer id="footer">
+        <div class="footer-container" align="center" style="background-color: black; height: 100px;">
+        <p>MicroFinder inc  Powered By @Microcessor</p>
+        </div>
+    </footer>
+
+</html>

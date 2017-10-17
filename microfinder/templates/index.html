@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MicroFinder</title>
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='css/bootstrap.min.css' )}}" rel='stylesheet'>
+    <link href="{{url_for('static', filename='logo.ico' )}}" rel='shortcut icon'>
+    <link href="{{url_for('static', filename='css/fine.css')}}" rel='stylesheet'>
+</head>
+<body>
+	<div class="container" >
+		<div class="hero">
+
+				<div class="logo">
+					<img style="margin-top: 20px; width: 40%" src="{{url_for('static', filename='images/MicroFinder.png')}}">
+				</div>
+				<div class="contain">
+					<div class="search">
+					  <form class="navbar-form" role="search" action="" method="post">
+					    <div class="input-group add-on">
+					      <input class="form-control" style="width: 500px; height: 46px" placeholder="Search" name="search" id="search" type="text">
+					      <div class="input-group-btn">
+					        <button class="btn btn-success btn-lg" type="submit">Search</button>
+					      </div>
+					    </div>
+					  </form>
+					</div>
+				</div>
+
+		</div>
+	</div>
+</body>
+</html>

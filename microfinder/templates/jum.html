@@ -1,0 +1,22 @@
+{% extends "dashboard.html"%}
+
+{% block body%}
+<p style="font-style: oblique; font-size: xx-large; font-weight: bolder; font-family: helvitica, sans-serif, monospace;" align="center">JUMIA</p>
+<nav class="navbar-default navbar-left" style="margin-left: 20px;">
+
+    <!--<ul>-->
+{% for user in range(0, 30) %}
+  <!--<li>-->
+      <div class="" style="margin-top: 10px;">
+      <a href="{{ data_url[user] }}">
+      {{ fine_data[user] }}
+      </a>
+      </div>
+  <!--</li>-->
+
+{% endfor %}
+<!--</ul>-->
+
+</nav>
+
+{% endblock %}
