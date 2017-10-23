@@ -35,3 +35,8 @@ body {
 	text-align: center;
 	margin-top: 40px;
 }
+
+.buttons{
+display: block;
+text-align: center;
+}

@@ -26,14 +26,14 @@ def find_jumia(search):
         item_url.append(all_urls[i].get_text())
         links = all_urls[i]['href']
         item_url1.append(links)
-    for i in range(0, 15):
-        item_data.append(item_name[i])
-        item_data.append(item_price[i])
+    # for i in range(0, 15):
+    #     item_data.append(item_name[i])
+    #     item_data.append(item_price[i])
     #     print(item_name[i])
     #     print(item_price[i])
     #     print(item_url1[i])
     #p(item_data)
-    return item_data, item_url1
+    return item_name, item_url1, item_price
 
 
 #find_jumia('gowns')

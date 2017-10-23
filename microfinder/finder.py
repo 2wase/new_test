@@ -9,8 +9,8 @@ app.config['DEBUG'] = True
 def homepage():
     if request.method == "POST":
         search_key = request.form['search']
-        fine_data, data_url = search.find_jumia(search_key)
-        return render_template("jum.html", search_key=search_key, fine_data=fine_data, data_url=data_url)
+        data_name, data_url, data_price = search.find_jumia(search_key)
+        return render_template("jum.html", search_key=search_key, data_name=data_name, data_url=data_url, data_price=data_price)
     else:
         return render_template("index.html")
 
@@ -20,9 +20,12 @@ def dashboard():
     return render_template("dashboard.html")
 
 
-@app.route("/jumia/")
+@app.route("/jumia/", methods=['GET', 'POST'])
 def jumia():
-    return render_template("jum.html")
+    if request.method == "POST":
+        search_key = request.form['search']
+        data_name, data_url, data_price = search.find_jumia(search_key)
+        return render_template("jum.html", search_key=search_key, data_name=data_name, data_url=data_url, data_price=data_price)
 
 
 if __name__ == "__main__":
