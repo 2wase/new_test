@@ -1,10 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
-from pprint import pprint as p
 
 
 def find_jumia(search):
-    n = ' '
+
     for n in search:
         word = search.replace(' ', '+')
     url = "https://www.jumia.com.ng/catalog/?q=" + word
@@ -14,7 +13,6 @@ def find_jumia(search):
     item_price = []
     item_url = []
     item_url1 = []
-    item_data = []
     all_h2 = jumia.find_all("h2")
     price = jumia.find_all("span", "price")
     all_urls = jumia.find_all("a", "link")
@@ -26,21 +24,11 @@ def find_jumia(search):
         item_url.append(all_urls[i].get_text())
         links = all_urls[i]['href']
         item_url1.append(links)
-    # for i in range(0, 15):
-    #     item_data.append(item_name[i])
-    #     item_data.append(item_price[i])
-    #     print(item_name[i])
-    #     print(item_price[i])
-    #     print(item_url1[i])
-    #p(item_data)
+
     return item_name, item_url1, item_price
 
 
-#find_jumia('gowns')
-
-
 def find_konga(search):
-    n = ' '
     for n in search:
         word = search.replace(' ', '+')
     url = "https://www.konga.com/catalogsearch/result/?q=" + word
@@ -60,17 +48,11 @@ def find_konga(search):
     for i in range(0, len(all_urls)):
         links = all_urls[i]['href']
         item_url.append(url_prefix + links)
-    for i in range(0, 9):
-        print(item_name[i])
-        print(item_price[i])
-        print(item_url[i])
 
-
-#find_konga('samsung')
+    return item_price, item_name, item_url
 
 
 def find_payporte(search):
-    n = ' '
     for n in search:
         word = search.replace(' ', '+')
     url = "https://www.payporte.com/catalogsearch/result/?q=" + word
@@ -89,10 +71,7 @@ def find_payporte(search):
     for i in range(0, len(all_urls)):
         links = all_urls[i]['href']
         item_url.append(links)
-    for i in range(0, 10):
-        print(item_name[i])
-        print(item_price[i])
-        print(item_url[i])
+
+    return item_name, item_price, item_url
 
 
-#find_payporte('shoes')

@@ -1,0 +1,24 @@
+{% extends "dashboard.html"%}
+
+{% block body%}
+<p style="font-size: xx-large; font-weight: bolder;" align="center">KONGA</p>
+<nav class="navbar-default navbar-left" style="margin-left: 40px;">
+
+    <!--<ul>-->
+{% for user in range(0, 15) %}
+  <!--<li>-->
+      <div class="" style="margin-top: 20px; width: 60%">
+            {{ item_name[user] }} <br>
+            {{ item_price[user] }} <br>
+      <a href="{{ item_url[user] }}">
+          {{ item_url[user] }}
+      </a>
+      </div>
+  <!--</li>-->
+
+{% endfor %}
+<!--</ul>-->
+
+</nav>
+
+{% endblock %}
